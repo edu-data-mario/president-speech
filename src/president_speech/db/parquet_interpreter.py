@@ -56,6 +56,7 @@ def table_president_word_frequency(word: str):
 
 
 def search_by(column_name: str, word: str, use_columns=["date", "title", "president", "division_number"]) -> pd.DataFrame:
+    """Search if words are included - contains"""
     df = read_parquet(use_columns)
 
     df = df[df[column_name].str.contains(word)]
