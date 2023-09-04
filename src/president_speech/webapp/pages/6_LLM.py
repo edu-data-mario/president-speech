@@ -11,19 +11,19 @@ st.title("president speech BOT")
 
 st.session_state.setdefault(
     'past', [
-        '따라해봐',
+        'hello',
         ]
 )
 st.session_state.setdefault(
     'generated', [
-        {'type': 'normal', 'data': '응'},
+        {'type': 'normal', 'data': 'Line 1'},
      ]
 )
 
 def on_input_change():
     user_input = st.session_state.user_input
     st.session_state.past.append(user_input)
-    st.session_state.generated.append({'type': 'normal', 'data': user_input})
+    st.session_state.generated.append({'type': 'normal', 'data': user_input},)
 
    
 with st.container():
@@ -37,5 +37,5 @@ with chat_placeholder.container():
         message(st.session_state['past'][i], is_user=True)
 
         message(
-            st.session_state['generated'][0]['data']
+            st.session_state['generated'][i]['data']
         )
