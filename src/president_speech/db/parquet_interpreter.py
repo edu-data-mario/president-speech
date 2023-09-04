@@ -66,6 +66,7 @@ def search_by(column_name: str, word: str, use_columns=["date", "title", "presid
     df = df.sort_values("date")
     return df
 
+    
 
 
 
