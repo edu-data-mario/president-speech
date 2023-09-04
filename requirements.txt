@@ -4,4 +4,4 @@ pyarrow
 fastparquet
 tabulate
 termplotlib
-streamlit==1.24.1
+streamlit==1.26.0

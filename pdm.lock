@@ -6,7 +6,7 @@ groups = ["default", "dev", "test"]
 cross_platform = true
 static_urls = false
 lock_version = "4.3"
-content_hash = "sha256:194755738440e22fb7239019fa2e9474aade11cf16e0a79f566ea99cef41d56e"
+content_hash = "sha256:ebf1a95448b620f7b4c216d83fcba81e4bd8dcac9073e9b5bbe61e38893f7eb0"
 
 [[package]]
 name = "altair"
@@ -2321,7 +2321,7 @@ files = [
 
 [[package]]
 name = "streamlit"
-version = "1.24.1"
+version = "1.26.0"
 requires_python = ">=3.8, !=3.9.7"
 summary = "A faster way to build and share data apps"
 dependencies = [
@@ -2329,30 +2329,43 @@ dependencies = [
     "blinker<2,>=1.0.0",
     "cachetools<6,>=4.0",
     "click<9,>=7.0",
-    "gitpython!=3.1.19,<4,>=3",
+    "gitpython!=3.1.19,<4,>=3.0.7",
     "importlib-metadata<7,>=1.4",
-    "numpy<2,>=1",
-    "packaging<24,>=14.1",
-    "pandas<3,>=0.25",
-    "pillow<10,>=6.2.0",
+    "numpy<2,>=1.19.3",
+    "packaging<24,>=16.8",
+    "pandas<3,>=1.3.0",
+    "pillow<10,>=7.1.0",
     "protobuf<5,>=3.20",
-    "pyarrow>=4.0",
-    "pydeck<1,>=0.1.dev5",
+    "pyarrow>=6.0",
+    "pydeck<1,>=0.8",
     "pympler<2,>=0.9",
-    "python-dateutil<3,>=2",
-    "requests<3,>=2.4",
-    "rich<14,>=10.11.0",
-    "tenacity<9,>=8.0.0",
-    "toml<2",
+    "python-dateutil<3,>=2.7.3",
+    "requests<3,>=2.18",
+    "rich<14,>=10.14.0",
+    "tenacity<9,>=8.1.0",
+    "toml<2,>=0.10.1",
     "tornado<7,>=6.0.3",
-    "typing-extensions<5,>=4.0.1",
+    "typing-extensions<5,>=4.1.0",
     "tzlocal<5,>=1.1",
     "validators<1,>=0.2",
-    "watchdog; platform_system != \"Darwin\"",
+    "watchdog>=2.1.5; platform_system != \"Darwin\"",
 ]
 files = [
-    {file = "streamlit-1.24.1-py2.py3-none-any.whl", hash = "sha256:569211b426ca078c0c2959a6c9a1413c2e81eca23e769fbf12308ba5bffd1f49"},
-    {file = "streamlit-1.24.1.tar.gz", hash = "sha256:fd5f0b64798e9706364408fb589b77595314a6315d13b2d750b963c7ae97f362"},
+    {file = "streamlit-1.26.0-py2.py3-none-any.whl", hash = "sha256:2bfdac041816e2e1ba27f061d40112afe61e0d4e72d25f354b38ba81107b4cb3"},
+    {file = "streamlit-1.26.0.tar.gz", hash = "sha256:25475fb15a3cc9fb184945f3fc936f011998bd8386e0c892febe14c9625bf47a"},
+]
+
+[[package]]
+name = "streamlit-chat"
+version = "0.1.1"
+requires_python = ">=3.6"
+summary = "A streamlit component, to make chatbots"
+dependencies = [
+    "streamlit>=0.63",
+]
+files = [
+    {file = "streamlit-chat-0.1.1.tar.gz", hash = "sha256:e5911c8e3d5bbdd444782a0eb46a5f0cf24247124eb165bcc2e759540767ac3c"},
+    {file = "streamlit_chat-0.1.1-py3-none-any.whl", hash = "sha256:bec918a6ff9d24fbc842d5a0e7c492e30e1ef71c3a72b94b0cb4be1a7300881e"},
 ]
 
 [[package]]
