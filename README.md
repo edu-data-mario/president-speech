@@ -102,6 +102,7 @@ $ ps-word-count -t 독립
 - https://frhyme.github.io/python-basic/py_no_break_space/
 - [x] https://pypi.org/project/pandas-downcast/
 - [x] https://realpython.com/python-project-documentation-with-mkdocs/
+- https://publivate.tistory.com/245 modin, dask, vaex => pandas
 
 ### Development environment setting
 ```bash
