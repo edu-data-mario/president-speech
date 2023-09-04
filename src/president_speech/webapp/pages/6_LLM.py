@@ -11,12 +11,12 @@ st.title("president speech BOT")
 
 st.session_state.setdefault(
     'past', [
-        'hello',
+        '본인은 ...',
         ]
 )
 st.session_state.setdefault(
     'generated', [
-        {'type': 'normal', 'data': 'Line 1'},
+        {'type': 'normal', 'data': '두환이니?'}
      ]
 )
 
