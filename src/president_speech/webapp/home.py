@@ -1,6 +1,12 @@
 import streamlit as st
 from president_speech.db.parquet_interpreter import read_parquet
 
+st.set_page_config(
+    page_title="P.S.O",
+    page_icon="hotsprings",
+    layout="wide",
+)
+
 markdown = '''
 ### president-speech ON-LINE
 ```

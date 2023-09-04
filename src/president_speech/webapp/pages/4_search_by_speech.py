@@ -8,6 +8,11 @@ df = pd.DataFrame()
 # 검색어 입력받기
 search_word = st.text_input("I'll find the presidential speech associated with the word you type.")
 
+st.set_page_config(
+    page_title="P.S.O",
+    page_icon="clipboard",
+    layout="wide",
+)
 
 # 검색어를 포함하는 행을 추출
 if search_word:

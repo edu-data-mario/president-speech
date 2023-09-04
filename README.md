@@ -103,6 +103,9 @@ $ ps-word-count -t 독립
 - [x] https://pypi.org/project/pandas-downcast/
 - [x] https://realpython.com/python-project-documentation-with-mkdocs/
 - https://publivate.tistory.com/245 modin, dask, vaex => pandas
+- [x] https://www.fileformat.info/info/emoji/list.htm
+- https://discuss.streamlit.io/t/version-1-26-0/50056
+- [x] https://github.com/ai-yash/st-chat
 
 ### Development environment setting
 ```bash
