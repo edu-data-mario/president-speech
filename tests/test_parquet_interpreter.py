@@ -8,7 +8,7 @@ def test_print_parquet_full_path():
 
 def test_president_word_frequency():
     df = pi.president_word_frequency(word='반공')
-    # assert isinstance(df, pd.DataFrame)
+    assert isinstance(df, pd.DataFrame)
 
 
 def test_plot_president_word_frequency():

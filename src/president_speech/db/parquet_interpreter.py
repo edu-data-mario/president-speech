@@ -1,7 +1,5 @@
 import os
-
-os.environ["MODIN_ENGINE"] = "dask"  # Modin will use Dask
-import modin.pandas as pd
+import pandas as pd
 import termplotlib as tpl
 from tabulate import tabulate
 
@@ -13,17 +11,7 @@ def get_parquet_full_path() -> str:
     return parquet_path
 
 
-def get_parquet_tmp_path() -> str:
-    """tmp parquet"""
-    return os.path.join(os.path.dirname(__file__), "parquet")
-
-
 def set_parquet_full_path(full_path: str) -> str:
-    """
-
-    :param full_path:
-    :return:
-    """
     parquet_path = full_path
     return parquet_path
 
@@ -45,7 +33,7 @@ def read_parquet(use_columns=['division_number', 'president', 'title', 'date', '
 
 def president_word_frequency(word: str) -> pd.DataFrame:
     """return -> [president, count_word]"""
-    df = read_parquet()
+    df = read_parquet(use_columns=['speech_text', 'president'])
     df['count_word'] = df['speech_text'].str.findall(word).str.len()
     df = df.groupby('president')['count_word'].sum().sort_values(ascending=False).to_frame().reset_index()
     return df

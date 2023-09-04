@@ -6,12 +6,13 @@ authors = [
     {name = "dmario24", email = "data.mario24@gmail.com"},
 ]
 dependencies = [
-    "modin[all]>=0.22.3",
-    "bokeh",
     "streamlit==1.24.1",
-    "termplotlib",
-    "tabulate",
-    "requests",
+    "termplotlib>=0.3.9",
+    "tabulate>=0.9.0",
+    "fastparquet>=2023.8.0",
+    "pyarrow>=13.0.0",
+    "requests>=2.31.0",
+    "pandas>=2.0.3",
 ]
 requires-python = ">=3.8,!=3.9.7"
 readme = "README.md"
@@ -40,7 +41,7 @@ where = ["src"]
 [tool.pdm]
 [tool.pdm.dev-dependencies]
 test = [
-    "pytest>=7.4.1",
+    "pytest>=7.4.2",
     "pytest-cov>=4.1.0",
 ]
 doc = [
