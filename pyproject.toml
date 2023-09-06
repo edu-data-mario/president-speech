@@ -1,6 +1,6 @@
 [project]
 name = "president-speech"
-version = "0.6.0"
+version = "0.6.1"
 description = "helper pip package module for analyzing presidential speech records (including basic data)"
 authors = [
     {name = "dmario24", email = "data.mario24@gmail.com"},
@@ -52,5 +52,5 @@ ptest = "pytest -s"
 test = "pytest"
 
 [project.urls]
-"Homepage" = "https://github.com/edu-data-mario/president-speech/president-speech"
+"Homepage" = "https://github.com/edu-data-mario/president-speech"
 "Bug Tracker" = "https://github.com/edu-data-mario/president-speech/issues"
