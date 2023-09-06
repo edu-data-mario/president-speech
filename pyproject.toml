@@ -33,8 +33,9 @@ doc = [
 ]
 
 [project.scripts]
-rmh-db-init = 'roh_moo_hyun.extract_speech_from_pdf:run'
-rmh-search = 'roh_moo_hyun.cli:search'
+ps-db-init = 'president_speech.extract_speech_from_pdf:run'
+ps-search = 'president_speech.cli:search'
+ps-word-count = 'president_speech.cli:word_count'
 
 [tool.setuptools.packages.find]
 # scanning for namespace packages is true by default in pyproject.toml, so
@@ -44,6 +45,7 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 "president_speech.db" = ["init.db"]
+"president_speech.db.parquet" = ["president_speech_ko.parquet"]
 
 [tool.pdm.scripts]
 ptest = "pytest -s"
