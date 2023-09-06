@@ -1,6 +1,6 @@
 [project]
 name = "president-speech"
-version = "0.5.0"
+version = "0.6.0"
 description = "helper pip package module for analyzing presidential speech records (including basic data)"
 authors = [
     {name = "dmario24", email = "data.mario24@gmail.com"},
