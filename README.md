@@ -1,64 +1,53 @@
-# roh-moo-hyun
-- 노무현 대통령의 연설문을 제공합니다.
-- South Korean former president Roh Moo-hyun, a politician who dedicated his life to democracy and human rights. I pay my respects to Roh Moo-hyun
+# president-speech
+- Presidents of the Republic of Korea Speeches
+- Parquet, provided in the form of sqlite db file
+- Comes with simple cli
 
-![roh](https://img.seoul.co.kr//img/upload/2016/05/23/SSI_20160523162354.jpg)
+### SUMMARY OF PROVIDED DATA
+- data per case can be checked in the following ways
+- https://www.pa.go.kr/research/contents/speech/index.jsp?spMode=view&catid=c_pa02062&artid={division_number}
+- some data show date values as empty columns or years only
 
-### USE
-```bash
-$ python -V
-Python 3.11.0
+| president | size | min(date)  | max(date)  |
+|:----------|:-----|:-----------|:-----------|
+| 이승만       | 998  | 1948.07.24 | 1959.03.10 |
+| 윤보선       | 3    | 1960.08.13 | 1960.09.15 |
+| 박정희       | 1270 | 1963.12.17 | 1979.10.26 |
+| 최규하       | 58   | 1979.10.27 | 1980.08.16 |
+| 전두환       | 602  | 1980.06.05 | 1987.02.16 |
+| 노태우       | 601  | 1988.02.25 | 1992.10.05 |
+| 김영삼       | 728  | 1993.01.09 | 1998.01.23 |
+| 김대중       | 822  | 1998.02.25 | 2003.02.17 |
+| 노무현       | 780  | 2003.02.25 | 2008.01.28 |
+| 이명박       | 1027 | 2008.02.25 | 2013.02.07 |
+| 박근혜       | 493  | 2013.02.24 | 2016.10.26 |
+| 문재인       | 1389 | 2017.05.10 | 2022.03.30 |
 
-$ pip install roh-moo-hyun
 
-$ $ rmh-search -h
-usage: rmh-search [-h] [-t | -s] keyword
+|    | president   |   mention |
+|---:|:------------|----------:|
+|  0 | 전두환      |         7 |
+|  1 | 박정희      |         6 |
+|  2 | 노태우      |         4 |
+|  3 | 박근혜      |         2 |
+|  4 | 김대중      |         0 |
+|  5 | 김영삼      |         0 |
+|  6 | 노무현      |         0 |
+|  7 | 문재인      |         0 |
+|  8 | 윤보선      |         0 |
+|  9 | 이명박      |         0 |
+| 10 | 이승만      |         0 |
+| 11 | 최규하      |         0 |
 
-positional arguments:
-  keyword       Search word
 
-options:
-  -h, --help    show this help message and exit
-  -t, --title   Search speech title like
-  -s, --speech  Search speech title speech
-
-$ rmh-search -s "임시정부"
-('2003-03-01', '제84주년 3·1절 기념사')
-('2003-04-13', '대한민국 임시정부 수립 84주년 기념식 연설')
-('2003-07-10', '[중국 국빈방문]한·중 경제인(상하이) 초청 오찬연설')
-('2004-06-06', '제49회 현충일 추념사 ')
-('2004-09-15', '대한민국 임시정부 기념사업회 창립총회 축하 메시지')
-('2005-03-01', '제86주년 3·1절 기념사 ')
-('2006-03-01', '제87주년 3·1절 기념사')
-('2006-04-13', '대한민국 임시정부 수립 87주년 기념 메시지 ')
-('2006-06-23', '대한민국 임시정부 기념관 건립 추진위원회 발족식 축하 전문 ')
-('2006-10-13', '[중국방문]주중 대사관 신청사개관식 축사 ')
-```
-### Data
-```bash
-cat president_archive_ministry_of_public_safety_president_speech_record_speech_20220817.csv | cut -d',' -f2 | uniq
-대통령
-이승만
-윤보선
-박정희
-최규하
-전두환
-전두환
-노태우
-김영삼
-김대중
-노무현
-이명박
-박근혜
-```
-
-## Ref
+### Ref
 - [대통령기록관_행정안전부 대통령기록관_대통령연설기록 연설문](https://www.data.go.kr/data/15084167/fileData.do#tab-layer-openapi)
 - https://stackoverflow.com/questions/45470964/python-extracting-text-from-webpage-pdf
 - https://pypdf.readthedocs.io/en/latest/user/extract-text.html
 - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+- https://frhyme.github.io/python-basic/py_no_break_space/
 
-## Development environment setting
+### Development environment setting
 ```bash
 $ pdm add requests
 $ pdm add -dG test pytest pytest-cov
