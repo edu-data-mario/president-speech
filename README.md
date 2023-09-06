@@ -25,6 +25,8 @@
 
 ### Use
 ```bash
+$ pip install president-speech
+
 $ ps-word-count -h     
 usage: ps-word-count [-h] [-t | -p] word
 
@@ -37,7 +39,7 @@ optional arguments:
   -h, --help   show this help message and exit
   -t, --table  Table Format Output
   -p, --plot   Format Output
-  
+
 $ ps-word-count -p 독립
 문재인  [954]  ****************************************
 이승만  [430]  ******************
@@ -51,7 +53,9 @@ $ ps-word-count -p 독립
 박근혜  [ 71]  ***
 최규하  [  4]  *
 윤보선  [  0]
+```
 
+```bash
 $ ps-word-count -t 독립
 |    | president   |   mention |
 |---:|:------------|----------:|
