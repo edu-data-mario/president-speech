@@ -52,5 +52,5 @@ ptest = "pytest -s"
 test = "pytest"
 
 [project.urls]
-"Homepage" = "https://github.com/edu-data-mario/president-speech/president-speech"
+"Homepage" = "https://github.com/edu-data-mario/president-speech"
 "Bug Tracker" = "https://github.com/edu-data-mario/president-speech/issues"
