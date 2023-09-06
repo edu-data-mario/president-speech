@@ -6,8 +6,13 @@ from tabulate import tabulate
 PARQUET_PATH = os.path.join(os.path.dirname(__file__), "parquet", "president_speech_ko.parquet")
 
 
+def get_parquet_full_path() -> str:
+    """Here's the full path of the built-in parquet"""
+    return PARQUET_PATH
+
+
 def print_parquet_full_path():
-    print(PARQUET_PATH)
+    print(get_parquet_full_path())
 
 
 def read_parquet() -> pd.DataFrame:

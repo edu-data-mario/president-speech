@@ -35,7 +35,7 @@ doc = [
 [project.scripts]
 ps-db-init = 'president_speech.extract_speech_from_pdf:run'
 ps-search = 'president_speech.cli:search'
-ps-word-count = 'president_speech.cli:word_count'
+ps-wordcount = 'president_speech.cli:word_count'
 
 [tool.setuptools.packages.find]
 # scanning for namespace packages is true by default in pyproject.toml, so
@@ -48,8 +48,10 @@ where = ["src"]
 "president_speech.db.parquet" = ["president_speech_ko.parquet"]
 
 [tool.pdm.scripts]
+ctest = "pytest --cov"
 ptest = "pytest -s"
 test = "pytest"
+
 
 [project.urls]
 "Homepage" = "https://github.com/edu-data-mario/president-speech"
