@@ -24,6 +24,22 @@
 | 문재인       | 1389 | 2017.05.10 | 2022.03.30 |
 
 
+|    | president   |   mention |
+|---:|:------------|----------:|
+|  0 | 전두환      |         7 |
+|  1 | 박정희      |         6 |
+|  2 | 노태우      |         4 |
+|  3 | 박근혜      |         2 |
+|  4 | 김대중      |         0 |
+|  5 | 김영삼      |         0 |
+|  6 | 노무현      |         0 |
+|  7 | 문재인      |         0 |
+|  8 | 윤보선      |         0 |
+|  9 | 이명박      |         0 |
+| 10 | 이승만      |         0 |
+| 11 | 최규하      |         0 |
+
+
 ### Ref
 - [대통령기록관_행정안전부 대통령기록관_대통령연설기록 연설문](https://www.data.go.kr/data/15084167/fileData.do#tab-layer-openapi)
 - https://stackoverflow.com/questions/45470964/python-extracting-text-from-webpage-pdf

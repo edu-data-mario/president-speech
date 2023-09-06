@@ -13,6 +13,7 @@ dependencies = [
     "fastparquet>=2023.8.0",
     "jupyter>=1.0.0",
     "tabulate>=0.9.0",
+    "termplotlib>=0.3.9",
 ]
 requires-python = ">=3.9"
 readme = "README.md"
