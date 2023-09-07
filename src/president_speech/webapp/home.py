@@ -11,8 +11,9 @@ markdown = '''
 ┌─┐┌┐┌┬  ┬┌┐┌┌─┐         
 │ │││││  ││││├┤          
 └─┘┘└┘┴─┘┴┘└┘└─┘
- 
- $ pip install president-speech==0.7.0
+```
+```bash
+pip install president-speech==0.7.0
 ```
 '''
 
