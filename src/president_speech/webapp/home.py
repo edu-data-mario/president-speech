@@ -6,9 +6,9 @@ import president_speech.db.parquet_interpreter as pi
 df = pd.DataFrame()
 
 
-def get_df(search_word: str, columns: list) -> pd.DataFrame:
-    df_1 = pi.read_parquet()[columns]
-    df_r = df_1[df_1["president"].str.contains(search_word)]
+def get_df(word: str, columns: list) -> pd.DataFrame:
+    df_1 = pi.read_parquet(use_columns=columns)
+    df_r = df_1[df_1["president"].str.contains(word)]
     return df_r
 
 

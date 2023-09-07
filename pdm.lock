@@ -2,11 +2,11 @@
 # It is not intended for manual editing.
 
 [metadata]
-groups = ["default", "test", "doc"]
+groups = ["default", "test", "doc", "dev"]
 cross_platform = true
 static_urls = false
 lock_version = "4.3"
-content_hash = "sha256:0ae558b3ae4b3c7fa53c3bee3a5485216e267ff3be68f7b7bb0ad2b2efa687dc"
+content_hash = "sha256:f911ed1cf0d095fc1cac772409710a98605a5764b47e01e445b1e200103dfffc"
 
 [[package]]
 name = "altair"
@@ -1432,6 +1432,20 @@ files = [
     {file = "pandas-2.1.0-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:b31da36d376d50a1a492efb18097b9101bdbd8b3fbb3f49006e02d4495d4c644"},
     {file = "pandas-2.1.0-cp39-cp39-win_amd64.whl", hash = "sha256:0164b85937707ec7f70b34a6c3a578dbf0f50787f910f21ca3b26a7fd3363437"},
     {file = "pandas-2.1.0.tar.gz", hash = "sha256:62c24c7fc59e42b775ce0679cfa7b14a5f9bfb7643cfbe708c960699e05fb918"},
+]
+
+[[package]]
+name = "pandas-downcast"
+version = "1.2.4"
+requires_python = ">=3.6.1,<4"
+summary = "Shrink Pandas DataFrames with precision safe schema inference."
+dependencies = [
+    "numpy>=1.17; python_version >= \"3.7\"",
+    "pandas>=0.24",
+]
+files = [
+    {file = "pandas_downcast-1.2.4-py3-none-any.whl", hash = "sha256:b972f05fa98af04a6dca496c305406cb15607c41521d97328e2bc4390e30c14c"},
+    {file = "pandas_downcast-1.2.4.tar.gz", hash = "sha256:0cadbfe1a57ffdbb9b4c8c9aa1266c2d50f65cb9579e03956140e1db747e1efa"},
 ]
 
 [[package]]

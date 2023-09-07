@@ -3,20 +3,36 @@ import pandas as pd
 import termplotlib as tpl
 from tabulate import tabulate
 
-PARQUET_PATH = os.path.join(os.path.dirname(__file__), "parquet", "president_speech_ko.parquet")
+parquet_path = os.path.join(os.path.dirname(__file__), "parquet", "president_speech_ko.parquet")
 
 
 def get_parquet_full_path() -> str:
     """Here's the full path of the built-in parquet"""
-    return PARQUET_PATH
+    return parquet_path
+
+
+def set_parquet_full_path(full_path: str) -> str:
+    """
+
+    :param full_path:
+    :return:
+    """
+    parquet_path = full_path
+    return parquet_path
 
 
 def print_parquet_full_path():
     print(get_parquet_full_path())
 
 
-def read_parquet() -> pd.DataFrame:
-    df = pd.read_parquet(PARQUET_PATH)
+def read_parquet(use_columns=['division_number', 'president', 'title', 'date', 'location', 'kind', 'speech_text']) -> pd.DataFrame:
+    """
+    Read the parquet file of the president's speech history
+    - For efficient memory use, you can specify columns to read.
+    :param use_columns: ['division_number', 'president', 'title', 'date', 'location', 'kind', 'speech_text']
+    :return: pd.DataFrame
+    """
+    df = pd.read_parquet(parquet_path, columns=use_columns)
     return df
 
 

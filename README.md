@@ -100,6 +100,7 @@ $ ps-word-count -t 독립
 - https://pypdf.readthedocs.io/en/latest/user/extract-text.html
 - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
 - https://frhyme.github.io/python-basic/py_no_break_space/
+- [x] https://pypi.org/project/pandas-downcast/
 
 ### Development environment setting
 ```bash
@@ -133,8 +134,8 @@ TOTAL                                               73      5    93%
 
 ### Deploy to fly.io with Docker Technology
 ```bash
-$ docker build -t president-speech-webapp:0.7.0 .
-$ docker run -it --rm -p 7942:8051 president-speech-webapp:0.7.0
+$ docker build -t president-speech-webapp .
+$ docker run -it --rm -p 7942:8051 president-speech-webapp
 
 $ fly deploy
 Visit your newly deployed app at https://president-speech.fly.dev/
