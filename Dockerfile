@@ -1,10 +1,22 @@
-FROM python:3.9.18
+FROM python:3.9-slim
 
-WORKDIR /usr/src/app
+WORKDIR /webapp
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    software-properties-common \
+    git \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY . .
 
-CMD [ "python", "src/roh-moo-hyun/extract_speech_from_pdf.py"]
+RUN pip3 install -r requirements.txt
+
+RUN pip3 install .
+
+EXPOSE 8501
+
+HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+
+ENTRYPOINT ["streamlit", "run", "src/president_speech/webapp.py", "--server.port=8051", "--server.address=0.0.0.0"]

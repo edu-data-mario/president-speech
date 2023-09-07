@@ -75,7 +75,6 @@ $ ps-word-count -t 독립
 
 ```
 
-
 ### Ref
 - [대통령기록관_행정안전부 대통령기록관_대통령연설기록 연설문](https://www.data.go.kr/data/15084167/fileData.do#tab-layer-openapi)
 - https://stackoverflow.com/questions/45470964/python-extracting-text-from-webpage-pdf
@@ -113,7 +112,12 @@ tests/test_search.py                                 5      0   100%
 TOTAL                                               73      5    93%
 ```
 
+### Deploy to fly.io with Docker Technology
 ```bash
-$ docker build -t president_speech:0.2.0 .
-$ docker run -d --name roh-moo-hyun020 -v "$PWD":/usr/src/app president_speech:0.2.0
+$ docker build -t president-speech-webapp:0.7.0 .
+$ docker run -it --rm -p 7942:8051 president-speech-webapp:0.7.0
+
+$ fly deploy
+Visit your newly deployed app at https://president-speech.fly.dev/
 ```
+
