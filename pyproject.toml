@@ -53,6 +53,7 @@ where = ["src"]
 ctest = "pytest --cov"
 ptest = "pytest -s"
 test = "pytest"
+runweb = "streamlit run src/president_speech/webapp.py"
 
 
 [project.urls]
