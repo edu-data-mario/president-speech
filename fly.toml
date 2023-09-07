@@ -1,0 +1,18 @@
+# fly.toml app configuration file generated for president-speech on 2023-09-07T09:29:07+09:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "president-speech"
+primary_region = "nrt"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[http_service]
+  internal_port = 8051
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 3
+  processes = ["app"]

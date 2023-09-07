@@ -2,8 +2,8 @@ from president_speech.db.search import title, speech
 
 
 def test_title():
-    title(keyword="일본")
+    title(keyword="독립")
 
 
 def test_speech():
-    speech(keyword="일본")
+    speech(keyword="독립")
