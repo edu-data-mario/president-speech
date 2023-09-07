@@ -50,4 +50,5 @@ st.line_chart(
     speeches_by_year_df,
     x='year',
     y='speeches',
+    height=200,
 )

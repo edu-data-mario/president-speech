@@ -19,11 +19,12 @@ search_word = st.text_input("Please enter the President's name.")
 # 검색어를 포함하는 행을 추출
 if search_word:
     # DataFrame 생성
-    df = get_df(search_word, ["date", "title", "president"])
+    df = get_df(search_word, ["date", "title", "president", "division_number"])
     df = df[df["president"].str.contains(search_word)]
-
+    df = df.set_index(["division_number"])
+    df = df.sort_values("date")
 # 결과 출력
 if df.empty:
     st.write("No search results found.")
 else:
-    st.table(df)
+    st.dataframe(df)
