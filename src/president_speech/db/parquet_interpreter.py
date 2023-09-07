@@ -55,6 +55,17 @@ def table_president_word_frequency(word: str):
     print(tabulate(df, headers=['president', 'mention'], tablefmt='pipe'))
 
 
+def search_by(column_name: str, word: str) -> pd.DataFrame:
+    df = read_parquet(["date", "title", "president", "division_number"])
+
+    df = df[df[column_name].str.contains(word)]
+    # df = df.set_index(["division_number"])
+    pa_go_kr = "https://www.pa.go.kr/research/contents/speech/index.jsp?spMode=view&catid=c_pa02062&artid="
+    df["url"] = df["division_number"].apply(lambda x: f"{pa_go_kr}{x}")
+    df = df.sort_values("date")
+    return df
+
+
 
 
 
