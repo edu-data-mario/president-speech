@@ -101,6 +101,7 @@ $ ps-word-count -t 독립
 - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
 - https://frhyme.github.io/python-basic/py_no_break_space/
 - [x] https://pypi.org/project/pandas-downcast/
+- [x] https://realpython.com/python-project-documentation-with-mkdocs/
 
 ### Development environment setting
 ```bash

@@ -22,26 +22,6 @@ license = {text = "MIT"}
 requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.pdm]
-[tool.pdm.dev-dependencies]
-test = [
-    "pytest>=7.4.1",
-    "pytest-cov>=4.1.0",
-]
-doc = [
-    "mkdocs>=1.5.2",
-]
-dev = [
-    "jupyter>=1.0.0",
-    "pandas-downcast>=1.2.4",
-]
-
-[tool.pdm.scripts]
-ctest = "pytest --cov"
-ptest = "pytest -s"
-test = "pytest"
-runweb = "streamlit run src/president_speech/webapp/home.py"
-
 [project.scripts]
 ps-db-init = 'president_speech.extract_speech_from_pdf:run'
 ps-search = 'president_speech.cli:search'
@@ -56,6 +36,29 @@ where = ["src"]
 [tool.setuptools.package-data]
 "president_speech.db" = ["init.db"]
 "president_speech.db.parquet" = ["president_speech_ko.parquet"]
+
+
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=7.4.1",
+    "pytest-cov>=4.1.0",
+]
+doc = [
+    "mkdocs>=1.5.2",
+    "mkdocstrings[python]>=0.23.0",
+    "mkdocs-material>=9.2.8",
+]
+dev = [
+    "jupyter>=1.0.0",
+    "pandas-downcast>=1.2.4",
+]
+
+[tool.pdm.scripts]
+ctest = "pytest --cov"
+ptest = "pytest -s"
+test = "pytest"
+runweb = "streamlit run src/president_speech/webapp/home.py"
 
 [project.urls]
 "Homepage" = "https://github.com/edu-data-mario/president-speech"
