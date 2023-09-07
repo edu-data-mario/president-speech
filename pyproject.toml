@@ -1,6 +1,10 @@
 [project]
 name = "president-speech"
+<<<<<<< HEAD
 version = "0.7.0"
+=======
+version = "0.6.1"
+>>>>>>> fcf582fa4a1a57ebcea44c851bca98bfcaf61f1d
 description = "helper pip package module for analyzing presidential speech records (including basic data)"
 authors = [
     {name = "dmario24", email = "data.mario24@gmail.com"},
