@@ -101,6 +101,7 @@ $ ps-word-count -t 독립
 - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
 - https://frhyme.github.io/python-basic/py_no_break_space/
 - [x] https://pypi.org/project/pandas-downcast/
+- [x] https://realpython.com/python-project-documentation-with-mkdocs/
 
 ### Development environment setting
 ```bash
@@ -140,4 +141,7 @@ $ docker run -it --rm -p 7942:8051 president-speech-webapp
 $ fly deploy
 Visit your newly deployed app at https://president-speech.fly.dev/
 ```
+![image](https://github.com/edu-data-mario/president-speech/assets/134017660/e108efcf-54ef-41c3-a9da-94d2ab5d1c21)
 
+# Give it a try. And opinions are always welcome. Of course, it's PR.
+- https://president-speech.fly.dev/
