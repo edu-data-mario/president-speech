@@ -24,6 +24,25 @@
     | 박근혜       | 493  | 2013.02.24 | 2016.10.26 |
     | 문재인       | 1389 | 2017.05.10 | 2022.03.30 |
 
+    ```python
+    >>> df.info()
+    
+    <class 'pandas.core.frame.DataFrame'>
+    Index: 8771 entries, 5368 to 102591
+    Data columns (total 7 columns):
+     #   Column           Non-Null Count  Dtype 
+    ---  ------           --------------  ----- 
+     0   division_number  8771 non-null   int64 
+     1   president        8771 non-null   object
+     2   title            8771 non-null   object
+     3   date             8771 non-null   object
+     4   location         8771 non-null   object
+     5   kind             8771 non-null   object
+     6   speech_text      8771 non-null   object
+    dtypes: int64(1), object(6)
+    memory usage: 548.2+ KB
+    ```
+
 ### Use
 ```bash
 $ pip install president-speech
