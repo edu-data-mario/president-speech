@@ -1,6 +1,12 @@
 import streamlit as st
 from president_speech.db.parquet_interpreter import read_parquet
 
+st.set_page_config(
+    page_title="P.S.O",
+    page_icon="hotsprings",
+    layout="wide",
+)
+
 markdown = '''
 ### president-speech ON-LINE
 ```
@@ -15,7 +21,7 @@ markdown = '''
 └─┘┘└┘┴─┘┴┘└┘└─┘
 ```
 ```bash
-pip install president-speech==0.7.5
+pip install president-speech==0.8.0
 ```
 '''
 
@@ -25,6 +31,7 @@ st.markdown(markdown)
 df = read_parquet(use_columns=["president"])
 grouped = df.groupby("president")
 result_df = grouped.size().reset_index(name="speeches")
+
 st.bar_chart(
     result_df,
     x='president',

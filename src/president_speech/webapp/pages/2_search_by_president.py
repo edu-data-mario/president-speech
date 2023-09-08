@@ -2,6 +2,11 @@ import streamlit as st
 import pandas as pd
 import president_speech.db.parquet_interpreter as pi
 
+st.set_page_config(
+    page_title="P.S.O",
+    page_icon="seat",
+    layout="wide",
+)
 
 df = pd.DataFrame()
 
