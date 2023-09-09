@@ -3,7 +3,13 @@ import pandas as pd
 import termplotlib as tpl
 from tabulate import tabulate
 
+parquet_tmp_dir = os.path.join(os.path.dirname(__file__), "parquet_tmp")
 parquet_path = os.path.join(os.path.dirname(__file__), "parquet", "president_speech_ko.parquet")
+
+
+def get_parquet_tmp_dir() -> str:
+    """Here's the full path of the built-in parquet"""
+    return parquet_tmp_dir
 
 
 def get_parquet_full_path() -> str:

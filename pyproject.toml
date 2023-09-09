@@ -54,6 +54,7 @@ doc = [
 dev = [
     "jupyter>=1.0.0",
     "pandas-downcast>=1.2.4",
+    "setuptools>=68.2.0",
 ]
 
 [tool.pdm.scripts]
