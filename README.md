@@ -95,7 +95,8 @@ $ ps-word-count -t 독립
 ```
 
 ### Ref
-- [대통령기록관_행정안전부 대통령기록관_대통령연설기록 연설문](https://www.data.go.kr/data/15084167/fileData.do#tab-layer-openapi)
+- [대통령기록관 연설기록](https://www.pa.go.kr/research/contents/speech/index.jsp)
+- [대통령기록관_행정안전부 대통령기록관_대통령연설기록 연설문 API](https://www.data.go.kr/data/15084167/fileData.do#tab-layer-openapi)
 - https://stackoverflow.com/questions/45470964/python-extracting-text-from-webpage-pdf
 - https://pypdf.readthedocs.io/en/latest/user/extract-text.html
 - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
@@ -107,6 +108,8 @@ $ ps-word-count -t 독립
 - https://discuss.streamlit.io/t/version-1-26-0/50056
 - [x] https://github.com/ai-yash/st-chat
 - https://konlpy.org/ko/latest/index.html
+- https://liveyourit.tistory.com/57
+- https://dongdongfather.tistory.com/70
 
 ### Development environment setting
 ```bash
