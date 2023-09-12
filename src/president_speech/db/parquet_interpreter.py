@@ -2,15 +2,9 @@ import os
 import pandas as pd
 import termplotlib as tpl
 from tabulate import tabulate
-import dask.dataframe as dd
-import unicodedata
-import urllib.parse
-import gc
-
 
 parquet_tmp_dir = os.path.join(os.path.dirname(__file__), "parquet_tmp")
-# parquet_path = os.path.join(os.path.dirname(__file__), "parquet", "president_speech_ko.parquet")
-parquet_path = os.path.join(os.path.dirname(__file__), "parquet_tmp", "partition", "df")
+parquet_path = os.path.join(os.path.dirname(__file__), "parquet", "president_speech_ko.parquet")
 
 
 def get_parquet_tmp_dir() -> str:
@@ -32,22 +26,14 @@ def print_parquet_full_path():
     print(get_parquet_full_path())
 
 
-def read_parquet(use_columns=['division_number', 'president', 'title', 'date', 'location', 'kind', 'speech_text'], partition_key=None) -> pd.DataFrame:
+def read_parquet(use_columns=['division_number', 'president', 'title', 'date', 'location', 'kind', 'speech_text']) -> pd.DataFrame:
     """
     Read the parquet file of the president's speech history
     - For efficient memory use, you can specify columns to read.
     :param use_columns: ['division_number', 'president', 'title', 'date', 'location', 'kind', 'speech_text']
-    :param partition_key:
     :return: pd.DataFrame
     """
-    if partition_key:
-        ddf = dd.read_parquet(f'{parquet_path}/president={encode_korean(partition_key)}', columns=use_columns, memory_limit=100)
-    else:
-        # df = pd.read_parquet(parquet_path, columns=use_columns)
-        ddf = dd.read_parquet(parquet_path, columns=use_columns, memory_limit=100)
-
-    # df = ddf.compute()
-    return ddf
+    return pd.read_parquet(parquet_path, columns=use_columns)
 
 
 def president_word_frequency(word: str) -> pd.DataFrame:
@@ -75,41 +61,12 @@ def search_by(column_name: str, word: str, use_columns=["date", "title", "presid
     df = read_parquet(use_columns)
 
     df = df[df[column_name].str.contains(word)]
-    # df = df.set_index(["division_number"])
+
     pa_go_kr = "https://www.pa.go.kr/research/contents/speech/index.jsp?spMode=view&catid=c_pa02062&artid="
     df["url"] = df["division_number"].apply(lambda x: f"{pa_go_kr}{x}")
     df = df.sort_values("date")
-    return df.compute()
+    return df
 
-
-def partition_search_by(column_name: str, word: str,
-                        use_columns=["date", "title", "president", "division_number"],
-                        presidents=['이승만', '윤보선', '박정희', '최규하', '전두환', '노태우', '김영삼', '김대중', '노무현', '이명박', '박근혜', '문재인']
-                        ) -> pd.DataFrame:
-    dfs = []
-    for p in presidents:
-        gc.collect()
-        df = read_parquet(use_columns, partition_key=p)
-
-        df = df[df[column_name].str.contains(word)]
-        # df = df.set_index(["division_number"])
-        pa_go_kr = "https://www.pa.go.kr/research/contents/speech/index.jsp?spMode=view&catid=c_pa02062&artid="
-        df["url"] = df["division_number"].apply(lambda x: f"{pa_go_kr}{x}")
-        df = df.sort_values("date")
-        dfs.append(df.compute())
-
-    return pd.concat(dfs)
-
-
-def encode_korean(text):
-  """한글을 URL 인코딩합니다."""
-
-  # 유니코드로 변환
-  unicode_text = unicodedata.normalize("NFC", text)
-
-  # URL 인코딩
-  encoded_text = urllib.parse.quote(unicode_text)
-  return encoded_text
 
 
 
