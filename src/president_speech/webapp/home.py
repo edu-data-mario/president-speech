@@ -21,7 +21,7 @@ markdown = '''
 └─┘┘└┘┴─┘┴┘└┘└─┘
 ```
 ```bash
-pip install president-speech==0.8.0
+pip install president-speech==0.9.0
 ```
 '''
 
@@ -31,7 +31,7 @@ st.markdown(markdown)
 df = read_parquet(use_columns=["president"])
 grouped = df.groupby("president")
 result_df = grouped.size()
-result_df = result_df.compute().reset_index(name="speeches")
+result_df = result_df.reset_index(name="speeches")
 
 st.bar_chart(
     result_df,
@@ -52,7 +52,7 @@ df = df[df["year"].str[:4] != ""]
 
 # 연도별 집계
 speeches_by_year_df = df["year"].value_counts()
-speeches_by_year_df = speeches_by_year_df.compute().reset_index(name="speeches").sort_values("year")
+speeches_by_year_df = speeches_by_year_df.reset_index(name="speeches").sort_values("year")
 
 # 출력
 st.line_chart(
