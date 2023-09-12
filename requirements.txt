@@ -1,3 +1,4 @@
+dask
 pandas
 requests
 pyarrow

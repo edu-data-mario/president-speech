@@ -3,7 +3,13 @@ import pandas as pd
 import termplotlib as tpl
 from tabulate import tabulate
 
+parquet_tmp_dir = os.path.join(os.path.dirname(__file__), "parquet_tmp")
 parquet_path = os.path.join(os.path.dirname(__file__), "parquet", "president_speech_ko.parquet")
+
+
+def get_parquet_tmp_dir() -> str:
+    """Here's the full path of the built-in parquet"""
+    return parquet_tmp_dir
 
 
 def get_parquet_full_path() -> str:
@@ -27,8 +33,7 @@ def read_parquet(use_columns=['division_number', 'president', 'title', 'date', '
     :param use_columns: ['division_number', 'president', 'title', 'date', 'location', 'kind', 'speech_text']
     :return: pd.DataFrame
     """
-    df = pd.read_parquet(parquet_path, columns=use_columns)
-    return df
+    return pd.read_parquet(parquet_path, columns=use_columns)
 
 
 def president_word_frequency(word: str) -> pd.DataFrame:
@@ -56,13 +61,13 @@ def search_by(column_name: str, word: str, use_columns=["date", "title", "presid
     df = read_parquet(use_columns)
 
     df = df[df[column_name].str.contains(word)]
-    # df = df.set_index(["division_number"])
+
     pa_go_kr = "https://www.pa.go.kr/research/contents/speech/index.jsp?spMode=view&catid=c_pa02062&artid="
     df["url"] = df["division_number"].apply(lambda x: f"{pa_go_kr}{x}")
     df = df.sort_values("date")
     return df
 
-    
+
 
 
 

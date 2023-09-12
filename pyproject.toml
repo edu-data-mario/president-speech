@@ -1,6 +1,6 @@
 [project]
 name = "president-speech"
-version = "0.8.0"
+version = "0.9.0"
 description = "helper pip package module for analyzing presidential speech records (including basic data)"
 authors = [
     {name = "dmario24", email = "data.mario24@gmail.com"},
@@ -14,6 +14,8 @@ dependencies = [
     "requests>=2.31.0",
     "pandas>=2.0.3",
     "streamlit-chat>=0.1.1",
+    "konlpy>=0.6.0",
+    "dask>=2023.5.0",
 ]
 requires-python = ">=3.8,!=3.9.7"
 readme = "README.md"
@@ -36,8 +38,7 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 "president_speech.db" = ["init.db"]
-"president_speech.db.parquet" = ["president_speech_ko.parquet"]
-
+"*" = ["*.parquet"]
 
 [tool.pdm]
 [tool.pdm.dev-dependencies]
@@ -53,6 +54,7 @@ doc = [
 dev = [
     "jupyter>=1.0.0",
     "pandas-downcast>=1.2.4",
+    "setuptools>=68.2.0",
 ]
 
 [tool.pdm.scripts]

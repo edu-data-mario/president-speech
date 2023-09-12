@@ -42,11 +42,24 @@
     dtypes: int64(1), object(6)
     memory usage: 548.2+ KB
     ```
-
 ### Use
 ```bash
 $ pip install president-speech
+```
+```python
+>>> from president_speech.db.parquet_interpreter import read_parquet, get_parquet_full_path
+>>> get_parquet_full_path()
+'/Users/f16/code/edu/president-speech/.venv/lib/python3.8/site-packages/president_speech/db/parquet/president_speech_ko.parquet'
+>>> read_parquet().head(3)
+      division_number president                title        date location kind                                        speech_text
+5368          1305368       박정희  제5대 대통령 취임식 대통령 취임사  1963.12.17       국내  취임사  \n\n\n단군성조가 천혜의 이 강토 위에 국기를 닦으신지 반만년, 연면히 이어온 ...
+5369          1305369       박정희            국회 개회식 치사  1963.12.17       국내  기념사   존경하는 국회의장, 의원제위 그리고 내외귀빈 여러분! 오늘 이 뜻깊은 제3공화국의...
+5370          1305370       박정희               신년 메시지  1964.01.01       국내  신년사   친애하는 국내외의 동포 여러분! 혁명의 고된 시련을 겪고 민정이양으로 매듭을 지은...
+>>> 
 
+```
+### Use Cli
+```bash
 $ ps-wordcount -h     
 usage: ps-word-count [-h] [-t | -p] word
 
@@ -95,7 +108,8 @@ $ ps-word-count -t 독립
 ```
 
 ### Ref
-- [대통령기록관_행정안전부 대통령기록관_대통령연설기록 연설문](https://www.data.go.kr/data/15084167/fileData.do#tab-layer-openapi)
+- [대통령기록관 연설기록](https://www.pa.go.kr/research/contents/speech/index.jsp)
+- [대통령기록관_행정안전부 대통령기록관_대통령연설기록 연설문 API](https://www.data.go.kr/data/15084167/fileData.do#tab-layer-openapi)
 - https://stackoverflow.com/questions/45470964/python-extracting-text-from-webpage-pdf
 - https://pypdf.readthedocs.io/en/latest/user/extract-text.html
 - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
@@ -106,6 +120,10 @@ $ ps-word-count -t 독립
 - [x] https://www.fileformat.info/info/emoji/list.htm
 - https://discuss.streamlit.io/t/version-1-26-0/50056
 - [x] https://github.com/ai-yash/st-chat
+- https://konlpy.org/ko/latest/index.html
+- https://liveyourit.tistory.com/57
+- https://dongdongfather.tistory.com/70
+- https://docs.python.org/3/library/collections.html#collections.Counter
 
 ### Development environment setting
 ```bash
