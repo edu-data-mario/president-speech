@@ -110,6 +110,7 @@ $ ps-word-count -t 독립
 - https://konlpy.org/ko/latest/index.html
 - https://liveyourit.tistory.com/57
 - https://dongdongfather.tistory.com/70
+- https://docs.python.org/3/library/collections.html#collections.Counter
 
 ### Development environment setting
 ```bash
