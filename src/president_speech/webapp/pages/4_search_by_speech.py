@@ -15,7 +15,7 @@ search_word = st.text_input("I'll find the presidential speech associated with t
 
 # 검색어를 포함하는 행을 추출
 if search_word:
-    df = pi.search_by("speech_text", search_word, use_columns=["date", "title", "president", "division_number", "speech_text"])
+    df = pi.partition_search_by("speech_text", search_word, use_columns=["date", "title", "president", "division_number", "speech_text"])
 
 # 결과 출력
 if df.empty:
