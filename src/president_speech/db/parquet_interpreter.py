@@ -69,7 +69,7 @@ def search_by(column_name: str, word: str, use_columns=["date", "title", "presid
     pa_go_kr = "https://www.pa.go.kr/research/contents/speech/index.jsp?spMode=view&catid=c_pa02062&artid="
     df["url"] = df["division_number"].apply(lambda x: f"{pa_go_kr}{x}")
     df = df.sort_values("date")
-    return df
+    return df.compute()
 
     
 
