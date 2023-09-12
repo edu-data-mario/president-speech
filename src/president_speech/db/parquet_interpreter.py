@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import termplotlib as tpl
 from tabulate import tabulate
+import dask.dataframe as dd
 
 parquet_tmp_dir = os.path.join(os.path.dirname(__file__), "parquet_tmp")
 parquet_path = os.path.join(os.path.dirname(__file__), "parquet", "president_speech_ko.parquet")
@@ -33,8 +34,10 @@ def read_parquet(use_columns=['division_number', 'president', 'title', 'date', '
     :param use_columns: ['division_number', 'president', 'title', 'date', 'location', 'kind', 'speech_text']
     :return: pd.DataFrame
     """
-    df = pd.read_parquet(parquet_path, columns=use_columns)
-    return df
+    # df = pd.read_parquet(parquet_path, columns=use_columns)
+    ddf = dd.read_parquet(parquet_path, columns=use_columns, memory_limit=100)
+    # df = ddf.compute()
+    return ddf
 
 
 def president_word_frequency(word: str) -> pd.DataFrame:

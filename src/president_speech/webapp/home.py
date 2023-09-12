@@ -30,7 +30,8 @@ st.markdown(markdown)
 # bar chart
 df = read_parquet(use_columns=["president"])
 grouped = df.groupby("president")
-result_df = grouped.size().reset_index(name="speeches")
+result_df = grouped.size()
+result_df = result_df.compute().reset_index(name="speeches")
 
 st.bar_chart(
     result_df,
@@ -50,7 +51,8 @@ df["year"] = df["date"].str[:4]
 df = df[df["year"].str[:4] != ""]
 
 # 연도별 집계
-speeches_by_year_df = df["year"].value_counts().reset_index(name="speeches").sort_values("year")
+speeches_by_year_df = df["year"].value_counts()
+speeches_by_year_df = speeches_by_year_df.compute().reset_index(name="speeches").sort_values("year")
 
 # 출력
 st.line_chart(
