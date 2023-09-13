@@ -17,6 +17,7 @@ dependencies = [
     "konlpy>=0.6.0",
     "dask>=2023.5.0",
     "segno>=1.5.2",
+    "qucode>=2.4",
 ]
 requires-python = ">=3.8,!=3.9.7"
 readme = "README.md"

@@ -6,7 +6,7 @@ groups = ["default", "dev", "test"]
 cross_platform = true
 static_urls = false
 lock_version = "4.3"
-content_hash = "sha256:3aa9fa07f590b4571af0665b1fc9c599e4bcd9be27a47f50425736002d223696"
+content_hash = "sha256:4a369a7c9bc4de0849e9914bdff904a41cf2e01fd4878bf97fb8216b905e1bf1"
 
 [[package]]
 name = "altair"
@@ -2243,6 +2243,14 @@ dependencies = [
 files = [
     {file = "QtPy-2.4.0-py3-none-any.whl", hash = "sha256:4d4f045a41e09ac9fa57fcb47ef05781aa5af294a0a646acc1b729d14225e741"},
     {file = "QtPy-2.4.0.tar.gz", hash = "sha256:db2d508167aa6106781565c8da5c6f1487debacba33519cedc35fa8997d424d4"},
+]
+
+[[package]]
+name = "qucode"
+version = "2.4"
+summary = "<乱字符提取地区编码>"
+files = [
+    {file = "qucode-2.4.tar.gz", hash = "sha256:ecd2f32fe1738edff198bccd57fe2005c4edbc58f8fb2e5f0ae054583dc46236"},
 ]
 
 [[package]]
