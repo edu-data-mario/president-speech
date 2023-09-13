@@ -7,7 +7,7 @@ from PIL import Image
 import streamlit as st
 from qrcode.image.styledpil import StyledPilImage
 from qrcode.image.styles.colormasks import HorizontalGradiantColorMask
-
+from urllib.request import urlopen
 
 
 # https://docs.streamlit.io/library/api-reference/utilities/st.set_page_config
@@ -61,19 +61,18 @@ generated_qrcodes_path = gen_img_full_path("generated_qrcodes") + "/"
 
 
 def generate_qrcode(url: str):
-    qr = qrcode.QRCode(
-                        version=1,
-                        error_correction=qrcode.constants.ERROR_CORRECT_L,
-                        box_size=10,
-                        border=2
-                        )
-    qr.add_data(url)
-    qr.make(fit=True)
-    img = qr.make_image(image_factory=StyledPilImage, color_mask=HorizontalGradiantColorMask())
+    slts_qrcode = segno.make_qr(url)
+    nirvana_url = urlopen("https://cdn.tongilnews.com/news/photo/202108/202895_84744_431.jpg")
+
 
     current_ts = datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
     qrcode_path = generated_qrcodes_path + "qrcode_" + str(current_ts) + ".png"
-    img.save(qrcode_path)
+
+    slts_qrcode.to_artistic(
+        background=nirvana_url,
+        target=qrcode_path,
+        scale=10,
+    )
     return qrcode_path
 
 
@@ -101,6 +100,7 @@ if url is not None and url != "":
                 file_name="myqr.png",
                 mime="image/png"
             )
+    st.image(image)
 else:
     st.warning('⚠ Please enter your URL! 😯')
 

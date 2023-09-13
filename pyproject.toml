@@ -18,6 +18,7 @@ dependencies = [
     "dask>=2023.5.0",
     "segno>=1.5.2",
     "qucode>=2.4",
+    "qrcode-artistic>=2.1.0",
 ]
 requires-python = ">=3.8,!=3.9.7"
 readme = "README.md"
