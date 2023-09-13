@@ -1,5 +1,11 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="P.S.O",
+    page_icon="hotsprings",
+    layout="wide",
+)
+
 markdown = '''
 # president-speech
 - Presidents of the Republic of Korea Speeches
