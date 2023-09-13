@@ -1,12 +1,9 @@
 import streamlit as st
 import os
 import segno
-import qrcode
 from datetime import datetime
 from PIL import Image
 import streamlit as st
-from qrcode.image.styledpil import StyledPilImage
-from qrcode.image.styles.colormasks import HorizontalGradiantColorMask
 from urllib.request import urlopen
 
 
@@ -62,7 +59,7 @@ generated_qrcodes_path = gen_img_full_path("generated_qrcodes") + "/"
 
 def generate_qrcode(url: str):
     slts_qrcode = segno.make_qr(url)
-    nirvana_url = urlopen("https://cdn.tongilnews.com/news/photo/202108/202895_84744_431.jpg")
+    nirvana_url = urlopen("https://user-images.githubusercontent.com/134017660/267542607-5f50ae02-58c9-4166-8e28-69a61e71002b.png")
 
 
     current_ts = datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
@@ -85,22 +82,30 @@ if url is not None and url != "":
     with st.spinner(f"Generating QR Code... 💫"):
         qrcode_path = generate_qrcode(str(url))
 
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.write(' ')
-    with col2:
-        image = Image.open(qrcode_path)
-        st.image(image, caption='Here\'s the Generated QR Code ✅')
+    # col1, col2 = st.columns(2)
+    # with col1:
+    #     image = Image.open(qrcode_path)
+    #     st.image(image, caption='remember General Hong Beom-Do')
+    # with col2:
+    #     with open(qrcode_path, "rb") as file:
+    #         btn = st.download_button(
+    #             label="Download Hong Beom-Do QR",
+    #             data=file,
+    #             file_name="HongBeomdoQR.png",
+    #             mime="image/png"
+    #         )
+    image = Image.open(qrcode_path)
+    st.image(image, caption='remember General Hong Beom-Do')
 
-    with col3:
-        with open(qrcode_path, "rb") as file:
-            btn = st.download_button(
-                label="Download image",
-                data=file,
-                file_name="myqr.png",
-                mime="image/png"
-            )
-    st.image(image)
+    with open(qrcode_path, "rb") as file:
+        btn = st.download_button(
+            label="Download Hong Beom-Do QR",
+            data=file,
+            file_name="HongBeomdoQR.png",
+            mime="image/png"
+        )
+
+
 else:
     st.warning('⚠ Please enter your URL! 😯')
 
