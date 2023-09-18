@@ -21,7 +21,7 @@ markdown = '''
 └─┘┘└┘┴─┘┴┘└┘└─┘
 ```
 ```bash
-pip install president-speech==0.9.0
+pip install president-speech==0.9.1
 ```
 '''
 

@@ -1,6 +1,6 @@
 [project]
 name = "president-speech"
-version = "0.9.0"
+version = "0.9.1"
 description = "helper pip package module for analyzing presidential speech records (including basic data)"
 authors = [
     {name = "dmario24", email = "data.mario24@gmail.com"},
@@ -16,6 +16,8 @@ dependencies = [
     "streamlit-chat>=0.1.1",
     "konlpy>=0.6.0",
     "dask>=2023.5.0",
+    "segno>=1.5.2",
+    "qrcode-artistic>=2.1.0",
 ]
 requires-python = ">=3.8,!=3.9.7"
 readme = "README.md"
